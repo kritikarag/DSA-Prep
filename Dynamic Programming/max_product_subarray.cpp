@@ -1,6 +1,7 @@
 int maxProduct(vector<int>& nums) {
         int res=nums[0];
-        for(int i=1,maxi=res,mini=res;i<nums.size();i++){
+        int mini=nums[0],maxi=nums[0];
+        for(int i=1;i<nums.size();i++){
             if(nums[i]<0)swap(mini,maxi);
             
             mini = min(nums[i],mini*nums[i]);
