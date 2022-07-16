@@ -1,3 +1,5 @@
+#include<bits/stdc++.h>
+using namespace std;
 void swap(vector<int>&vec,int i,int j){
         int temp = vec[i];
         vec[i]=vec[j];
