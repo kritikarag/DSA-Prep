@@ -1,3 +1,5 @@
+#include<bits/stdc++.h>
+using namespace std;
 string addBinary(string a, string b) {
         string res;
         int i = a.length() - 1;
