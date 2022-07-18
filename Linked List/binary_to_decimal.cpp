@@ -1,4 +1,11 @@
-#Approach 1
+#include<bits/stdc++.h>
+using namespace std;
+//Approach 1
+class ListNode{
+    public:
+    int val;
+    ListNode *next,*head;
+};
 
 ListNode* reverse(ListNode* head){
         ListNode* prev=NULL,*curr=head,*nxt = NULL;
@@ -29,7 +36,7 @@ ListNode* reverse(ListNode* head){
         return res;
     }
 
-#Approach 2
+//Approach 2
 
 int getDecimalValue(ListNode* head) {
         
