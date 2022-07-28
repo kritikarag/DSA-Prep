@@ -1,4 +1,4 @@
-bool searchMatrix(vector<vector<int>> &matrix, int target)
+bool searchMatrix(vector<vector<int>> &mt, int target)
 {
     int n = mt.size(), m = mt[0].size();
     int low = 0, high = m * n - 1;
