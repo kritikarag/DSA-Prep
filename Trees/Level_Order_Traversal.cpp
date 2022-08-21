@@ -16,7 +16,7 @@ vector<vector<int>> levelOrder(TreeNode* root) {
                 st.pop();
                  
             }
-           res.emplace_back(row);
+           res.emplace_back(row);// emplace_back is faster than push_back
         }
         
         return res;
