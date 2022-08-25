@@ -22,6 +22,7 @@ bool searchMatrix(vector<vector<int>> &mt, int target){
     return false;
 }
 
+
 //2nd Approach
 
 bool binarysearch(vector<int> &mt, int target)
