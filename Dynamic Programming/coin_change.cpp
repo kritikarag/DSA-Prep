@@ -35,6 +35,7 @@ int coinChange(vector<int> &coin, int amount)
                 dp[i][j] = min(1 + dp[i][j - coin[i - 1]], dp[i][j]);
         }
     }
+    
     if (dp[n][amount] == INT_MAX - 1)
         return -1;
     else
