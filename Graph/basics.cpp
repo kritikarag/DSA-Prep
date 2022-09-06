@@ -113,6 +113,38 @@ vector<int> dfsofGraph(int v, vector<int> &adj[])
     return dfs;
 }
 
-void cycleDetectionBFS(int v, vector<int> adj[])
+bool cycleDetectionBFS(int v, vector<int> adj[])
 {
+    queue<pair<int, int>> q;
+    vector<int> vis(v + 1, 0);
+    for (int i = 1; i <= v; i++)
+    {
+        if (!vis[i])
+        {
+            q.push({i, -1});
+            vis[i] = 1;
+            int n = q.size();
+            while (!q.empty())
+            {
+                auto temp = q.front();
+                q.pop();
+                for (auto it : adj[temp.first])
+                {
+                    if (vis[it])
+                    {
+                        if (it != temp.second)
+                            return true;
+                    }
+
+                    q.push({it, temp.first});
+                    vis[it] = 1;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+bool cycleDetectionDFS(int v, vector<int>ad[]){
+    
 }
