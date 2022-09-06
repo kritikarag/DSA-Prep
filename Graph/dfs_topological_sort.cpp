@@ -18,6 +18,8 @@ vector<int>topologicalSortDFS(int v, vector<int>adj[]){
         ts.push_back(st.top());
         st.pop();
     }
+
+    return ts;
 }
 
 //USING RECURSION
