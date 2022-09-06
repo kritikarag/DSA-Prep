@@ -251,7 +251,7 @@ bool bipartitedfs(int v, vector<int>adj[]){
     return true;
 }
 
-//CYCLE DETECTION IN DIRECTED GRAPH
+//CYCLE DETECTION IN DIRECTED GRAPH DFS
 
 bool cycleDirectedDFS(int v, vector<int>adj[]){
     vector<int>vis(v+1,0);
@@ -269,6 +269,7 @@ bool cycleDirectedDFS(int v, vector<int>adj[]){
         }
     }
 }
+
 //DETECTION OF CYCLE IN DIRECTED GRAPH USING DFS RECURSSION
 bool iscycle(int node, vector<int>adj[], vector<int>&vis, vector<int>&dfsvis){
     vis[node]=1;
@@ -293,5 +294,38 @@ bool cycleDirectedDFS(int v, vector<int>adj[]){
             if(iscycle(i,adj,vis,dfsvis))return true;
         }
     }
+    return true;
+}
+
+// CYCLE DETECTION IN DIRECTED GRAPH USING BFS
+
+bool cycleDetectionBFS(int v, vector<int>adj[]){
+    queue<int>q;
+    vector<int>indegree(v+1,0);
+
+    for(int i=1;i<=v;i++){
+        for(auto it: adj[i]){
+            indegree[it]++;
+        }
+    }
+
+    for(int i=1;i<=v;i++){
+        if(indegree[i]==0)q.push(i);
+    }
+
+    int count=0;
+
+    while(!q.empty()){
+        int node = q.front();
+        q.pop();
+        count++;
+        for(auto it: adj[node]){
+            indegree[node]--;
+            if(indegree[node]==0)q.push(it);
+        }
+    }
+
+    if(count==v)return false;
+
     return true;
 }
