@@ -14,7 +14,6 @@ vector<int>topologicalSortDFS(int v, vector<int>adj[]){
             st.push(i);
         }
     }
-
     while(!st.empty()){
         ts.push_back(st.top());
         st.pop();
