@@ -17,7 +17,7 @@ void subsequence(int ind,vector<int>&vec, vector<int>&res, int n){
     //Not choose the current index element
     res.pop_back();
     subsequence(ind+1,vec,res,n);// This statement can be inserted above line 14 to recursively call not pick
-    // function before the pick function
+    // function 
 }
 
 int main(){
