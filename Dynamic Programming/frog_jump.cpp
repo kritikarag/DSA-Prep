@@ -3,9 +3,9 @@
 int frogJump(int n, int energy[]){
     if(n==0)return 0;
 
-    int step1 = frogJump(n-1,energy)+ (energy[i]-energy[i-1]);
+    int step1 = frogJump(n-1,energy)+ abs(energy[i]-energy[i-1]);
     if(n>1)
-        int step2 = frogJump(n-2,energy)+(energy[i]-energy[i-2]);
+        int step2 = frogJump(n-2,energy) + abs(energy[i]-energy[i-2]);
 
     return min(step1,step2);
 }
@@ -32,10 +32,10 @@ int frogJump(int n, int energy[])
     dp[0]=0;
 
     for(int i=1;i<n;i++){
-        int step1 = dp[n - 1] + (energy[i] - energy[i - 1]);
+        int step1 = dp[n - 1] + abs(energy[i] - energy[i - 1]);
         step2=INT_MAX;
         if(n>1)
-            int step2 = dp[n - 2] + (energy[i] - energy[i - 2]);
+            int step2 = dp[n - 2] + abs(energy[i] - energy[i - 2]);
 
         dp[i] min(step1, step2);
     }
@@ -50,9 +50,9 @@ int frogJump(int n, int energy[])
     int prev1=0,prev2=0;
 
     for(int i=1;i<n;i++){
-        int step1 = prev1 + (energy[i] - energy[i - 1]);
+        int step1 = prev1 + abs(energy[i] - energy[i - 1]);
         if (n > 1)
-            int step2 = prev2 + (energy[i] - energy[i - 2]);
+            int step2 = prev2 + abs(energy[i] - energy[i - 2]);
 
         int curr = min(step1, step2);
         prev2 = prev1;
