@@ -54,7 +54,7 @@ bool targetsum(int ind, vector<int> &vec, vector<int> &res, int n, int sum, int 
     }
     // PICK CASE
     res.push_back(vec[ind]);
-    if(targetsum(ind + 1, vec, res, n, sum + vec[ind], target))return true;;
+    if(targetsum(ind + 1, vec, res, n, sum + vec[ind], target))return true;
     // NOT PICK
     res.pop_back();
     if(targetsum(ind + 1, vec, res, n, sum, target))return true;
