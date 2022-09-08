@@ -1,6 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//RECURSION
+int maxSum(int n, vector<int> &vec, vector<int> &dp)
+{
+    if (n <= 0)
+        return 0;
+
+    int pick = vec[ind] + maxSum(ind - 2, vec, dp);
+    int not_pick = maxSum(n - 1, vec, dp);
+
+    return max(pick, not_pick);
+}
 //MEMORIZATION
 vector<int>dp(n,-1);
 int maxSum(int n, vector<int>&vec, vector<int>&dp){
