@@ -4,7 +4,7 @@ using namespace std;
 //Printing all the subsequences
 void targetsum(int ind,vector<int>&vec, vector<int>&res, int n,int sum, int target){
     
-    // if(sum>target)return;
+    // if(sum>target)return; -> this base case can be used incase the elements in the array are positive
     if (ind >= n){
         if (sum == target)
         {
