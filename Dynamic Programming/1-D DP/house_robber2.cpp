@@ -16,7 +16,7 @@ int maxAmount(int ind, int end, vector<int>&vec){
 
 int main()
 {
-    vector<int> vec = {2, 1, 4, 9, 11, 13, 12};
+    vector<int> vec = {2, 1, 4, 9, 11, 13, 12};//houses are arranged in circular manner
     int n = vec.size();
     int start = maxAmount(0,n-1,vec);
     int finish = maxAmount(1,n,vec);
