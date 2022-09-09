@@ -51,14 +51,15 @@ bool subsetsum(int target,vector<int>&vec){
 //SPACE OPTIMIZATION
 
 bool subsetsum(int target, vector<int>&vec){
-    vector<bool>prev(target+1,false),curr(target+1,false);
+    vector<bool>prev(target+1,false);
 
     prev[0]=true;
-    curr[0]=true;
-    prev[vec[0]]=true;
+    if(vec[0]<=target)prev[vec[0]]=true;
 
     for (int i = 1; i < n; i++)
     {
+        vector<bool> curr(target + 1, false);
+        curr[0] = true;
         for (int j = 1; j <= target; j++)
         {
             // NOT TAKEN
@@ -72,5 +73,5 @@ bool subsetsum(int target, vector<int>&vec){
         prev = curr;
     }
 
-    return prev[k];
+    return prev[target];
 }
