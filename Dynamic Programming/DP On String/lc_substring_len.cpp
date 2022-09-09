@@ -1,6 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//RECURSION
+
+int maxlength(int ind1 ,int ind2, string&a, string &b, int count){
+    if(ind1<0||ind2<0)return count;
+
+    if(a[ind1]==b[ind2]){
+        count = maxlength(ind1-1,ind2-1,a,b, count+1);
+    }
+    return max(count,max(maxlength(ind1-1,ind2,a,b,0),maxlength(ind1,ind2-1,a,b,0)));
+}
+
 //MEMORIZATION
 
 int solve(string s1, string s2, int ind1, int ind2, vector<vector<int>> &dp)
@@ -87,6 +98,9 @@ int main()
     int n = s1.length();
     int m = s2.length();
 
-    cout << "The Length of Longest Common Substring is " << maxlength(n, m, s1, s2)<<endl;
+    cout << "The Length of Longest Common Substring is " << maxlength(n, m, s1, s2, 0) << endl;
+
+    //FOR CALLING RECURSIVE FUNCTION
+    cout << "The Length of Longest Common Substring is " << maxlength(n, m, s1, s2,0)<<endl;
     return 0;
 }
