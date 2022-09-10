@@ -1,5 +1,8 @@
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
 #include<bits/stdc++.h>
 using namespace std;
+
+//RECURSION
 
 int maxProfit(int ind,int buy, int cap, int n,vector<int>&prices){
     if(ind==n||cap==0)return 0;
@@ -9,7 +12,7 @@ int maxProfit(int ind,int buy, int cap, int n,vector<int>&prices){
         int profit = max(take,not_take);
     }
     else {
-        int sell = maxProfit(ind+1,1,cap--,n,prices)+prices[ind];
+        int sell = maxProfit(ind+1,1,cap-1,n,prices)+prices[ind];
         int not_sell = maxProfit(ind+1,0,cap,n,prices);
         int profit = max(sell,not_sell);
     }
@@ -109,4 +112,6 @@ int main()
     int n = prices.size();
 
     cout << "The maximum profit that can be generated is " << maximumProfit(prices, n);
+
+    cout << "The maximum profit that can be generated is " << maximumProfit(0,1,2,n,prices);// -> For Recursion
 }
