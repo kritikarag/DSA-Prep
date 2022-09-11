@@ -20,5 +20,5 @@ bool isSymmetric(TreeNode* root) {
             }
             
         }
-        return true;
-    }
+    return true;
+}
