@@ -2,7 +2,7 @@
 
 vector<vector<int>> verticalTraversal(TreeNode *root)
 {
-    map<int, map<int, multiset<int>>> mp;
+    map<int, map<int, multiset<int>>> mp;// -> multiset because two or more nodes can have the same value
     queue<pair<TreeNode *, pair<int, int>>> q;
     q.push({root, {0, 0}});
     while (!q.empty())
