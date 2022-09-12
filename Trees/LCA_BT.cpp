@@ -7,7 +7,7 @@ Node* lowestBT(Node* root, Node *p, Node* q){
     Node* right = lowestBT(root->right, p, q);
 
     if(!left)return right;
-    if(!right)return left;
+    else if(!right)return left;
 
-    return root;
+    else return root;
 }
