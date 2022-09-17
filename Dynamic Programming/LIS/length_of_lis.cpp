@@ -58,7 +58,7 @@ int longestIncreasingSubsequence(vector<int>&vec, int n){
             dp[ind][prev + 1] = max(take, not_take);
         }
     }
-    return dp[0][0];
+    return dp[0][0]; 
 }
 
 //SPACE OPTIMIZATION
