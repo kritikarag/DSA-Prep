@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/furthest-building-you-can-reach/
 int furthestBuilding(vector<int>& h, int b, int l) {
         int n = h.size();
         priority_queue<int>pq;
