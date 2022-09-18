@@ -320,8 +320,8 @@ bool cycleDetectionBFS(int v, vector<int>adj[]){
         q.pop();
         count++;
         for(auto it: adj[node]){
-            indegree[node]--;
-            if(indegree[node]==0)q.push(it);
+            indegree[it]--;
+            if(indegree[it]==0)q.push(it);
         }
     }
 
