@@ -18,7 +18,7 @@ vector<int>topView(TreeNode* root){
         auto curr = q.front();
         q.pop();
         TreeNode* temp = curr.first;
-        int col = curr.second;
+        int line = curr.second;
         if(mp.find(line)==mp.end())mp[line] = temp->val;
 
         if(temp->left)q.push({temp->left,line-1});
