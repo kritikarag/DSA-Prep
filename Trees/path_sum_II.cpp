@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/path-sum-ii/
 
-//1ST APPROACH
+//1ST APPROACH - Optimized Space Complexity
 void find(TreeNode *root, int sum, vector<int> &path, vector<vector<int>> &paths)
 {
     if (!root)
@@ -24,7 +24,7 @@ vector<vector<int>> pathSum(TreeNode *root, int target)
     return paths;
 }
 
-//2ND APPROACH
+//2ND APPROACH -Optimized Time Complexity
 
 vector<vector<int>> getAllPaths(TreeNode *root, int targetSum)
 {
