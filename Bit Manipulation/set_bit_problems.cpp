@@ -5,14 +5,14 @@ bool setbit(int n, int k){
     return n&mask;
 }
 
-//Set ith bit of a number k should be 1
+//Set kth bit of a number 1
 
 int setBit(int n, int k){
     int mask = 1 << k;
     return n|mask;
 }
 
-//Set ith bit of a number to 0
+//Set kth bit of a number to 0
 
 int setBit(int n, int k){
     int mask = ~(1<<k);
