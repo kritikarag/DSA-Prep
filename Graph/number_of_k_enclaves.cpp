@@ -1,5 +1,6 @@
-//
+// https://leetcode.com/problems/number-of-enclaves/
 
+//Using DFS
 void dfs(int i, int j, vector<vector<int>> &grid)
 {
     if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || grid[i][j] == 0)
@@ -43,10 +44,10 @@ bool valid_index(int i, int j, vector<vector<int>> &grid)
 {
     if (i < 0 || j < 0 || i >= grid.size() || j >= grid[0].size())
         return false;
+    
     return true;
 }
 
-//Needs Correction
 void bfs(int i, int j, vector<vector<int>> &grid)
 {
     grid[i][j] = 0;
@@ -77,8 +78,10 @@ int numEnclaves(vector<vector<int>> &grid)
     {
         for (int j = 0; j < grid[0].size(); j++)
         {
-            if (i == 0 || j == 0 || i == grid.size() - 1 || j == grid[0].size() - 1)
-                bfs(i, j, grid);
+            if (i == 0 || j == 0 || i == grid.size() - 1 || j == grid[0].size() - 1){
+                if (grid[i][j] == 1)
+                    bfs(i, j, grid);
+            }
         }
     }
 
