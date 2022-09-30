@@ -2,7 +2,7 @@
 using namespace std;
 
 pair<int,int> jobScheduling(vector<pair<int,pair<int,int>>>jobs){
-    pririty_queue<pair<int,pair<int,int>>>pq;
+    priority_queue<pair<int,pair<int,int>>>pq;
     int n=0;
     for(int i=0;i<jobs.size();i++){
         int profit = jobs[i].second.second;
