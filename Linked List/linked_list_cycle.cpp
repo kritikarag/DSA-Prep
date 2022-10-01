@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/linked-list-cycle/
+
 bool hasCycle(ListNode *head) {
     ListNode *slow = head, *fast = head;
     while (fast && fast->next) {
