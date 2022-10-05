@@ -58,3 +58,4 @@ bool judgeSquareSum(int c)
         }
     }
     return false;
+}
