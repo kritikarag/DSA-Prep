@@ -80,9 +80,11 @@ int shortestBridge(vector<vector<int>> &grid)
     return bfs(grid);
 }
 
-/* INTITUTION 
-    Given in the question is that there exist only two islands which means we need to 
+/* INTITUTION
+    Given in the question is that there exist only two islands which means we need to
     form a pair of group of 1's.
-    First of all we will traverse through the grid and when we'll get our first 1 we'll use dfs and get 
-    our first group of 1's i.e, our first island. 
+    First of all we will traverse through the grid and when we'll get our first 1 we'll use dfs and get
+    our first group of 1's i.e, our first island.
+    Note: which dfs traversal we'll store all the visited nodes in a queue so that each 1's of first island can be used to find the nearest 1 of next island.
+    Now after dfs traversal we'll do bfs on each 1's of first island to find the nearest 1 of the second island.
 */
