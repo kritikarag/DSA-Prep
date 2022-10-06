@@ -40,61 +40,56 @@ int maxDistance(vector<vector<int>>&grid){
 
 //Using BFS
 
-int row[4] = {1,0,-1,0};
-int col[4] = {0,1,0,-1};
+int row[4] = {1, 0, -1, 0};
+int col[4] = {0, 1, 0, -1};
 
-bool validIndex(int i, int j, vector<vector<int>>&grid, int count){
-    if(i<0||j<0||i>=grid.size()||j>=grid[i].size()||(grid[i][j]!=0 && grid[i][j]<=count))
+bool validIndex(int i, int j, vector<vector<int>> &grid)
+{
+    if (i < 0 || j < 0 || i >= grid.size() || j >= grid[i].size() || (grid[i][j] != 0))
         return false;
 
     return true;
 }
 
-void bfs(int i, int j, vector<vector<int>>&grid, int count){
-    queue<pair<int,int>>q;
-
-    q.push({i,j});
-    while(!q.empty()){
-        int r = q.front().first;
-        int c = q.front().second;
-
-        grid[r][c] = count++;
-
-        for(int k=0;k<4;k++){
-            int cr = r+row[k];
-            int cc = c+col[k];
-            if(validIndex(cr,cc,grid,count)){
-                grid[cr][cc] = count;
-            }
-        }
-    }
-}
-
 int maxDistance(vector<vector<int>> &grid)
 {
+    queue<pair<int, int>> q;
     for (int i = 0; i < grid.size(); i++)
     {
         for (int j = 0; j < grid[0].size(); j++)
         {
             if (grid[i][j] == 1)
             {
-                int count = 1;
-                bfs(i, j, grid, count);
+                q.push({i, j});
             }
         }
     }
 
-    int res = -1;
-    for (int i = 0; i < grid.size(); i++)
+    if (q.size() == grid.size() * grid[0].size())
+        return -1;
+    int ans = 0;
+    while (!q.empty())
     {
-        for (int j = 0; j < grid[i].size(); j++)
+        int sz = q.size();
+        ans++;
+        while (sz--)
         {
-            if (grid[i][j] > 1)
+            int r = q.front().first;
+            int c = q.front().second;
+            q.pop();
+
+            for (int k = 0; k < 4; k++)
             {
-                res = max(res, grid[i][j] - 1);
+                int cr = r + row[k];
+                int cc = c + col[k];
+                if (validIndex(cr, cc, grid))
+                {
+                    grid[cr][cc] = 1;
+                    q.push({cr, cc});
+                }
             }
         }
     }
 
-    return res;
+    return ans - 1;
 }
