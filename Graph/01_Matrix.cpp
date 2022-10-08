@@ -119,6 +119,7 @@ int bfs(int i, int j, vector<vector<int>> &grid)
     }
     return steps - 1;
 }
+
 vector<vector<int>> updateMatrix(vector<vector<int>> &mat)
 {
     int n = mat.size(), m = mat[0].size();
