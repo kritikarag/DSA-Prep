@@ -1,3 +1,5 @@
+// https://practice.geeksforgeeks.org/problems/convert-array-into-zig-zag-fashion1638/1
+
 void zigZag(int arr[], int n)
 {
     // flag true mean '<' is expected otherwise '>' is expected
