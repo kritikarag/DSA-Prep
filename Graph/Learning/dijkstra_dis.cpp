@@ -32,9 +32,29 @@ Using Set : -
 vector<int>dijkstra(int v, vector<pair<int, int>> adj[], int src)
 {
     vector<int> dis(v + 1, INT_MAX);
-    set<pair<int,int>>s;
+    set<pair<int,int>>st;
+    st.insert({0,src});
+    dis[src]=0;
 
+    while(!st.empty()){
+        auto it = *(st.begin());
+        int node = it.second;
+        int weight = it.first;
+        st.erase(it);
 
-    
+        for(auto it: adj[node]){
+            int temp = it[0];
+            int curr = it[1];
+
+            if(dis[temp]>curr+weight){
+                if(dis[temp]!=INT_MAX){
+                    st.erase({dis[temp],temp});
+                }
+
+                dis[temp] = weight + curr;
+                st.insert({dis[temp],temp});
+            }
+        }
+    }
     return dis;
 }
