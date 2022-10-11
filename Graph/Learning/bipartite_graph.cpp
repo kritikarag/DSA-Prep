@@ -52,8 +52,8 @@ bool dfs(vector<vector<int>>& adj, int node, vector<int> &color)
         if (color[it] == -1)
         {
             color[it] = 1 - color[node];
-            if (dfs(adj, it, color))
-                return true;
+            if (!dfs(adj, it, color))
+                return false;
         }
         else
         {
@@ -64,10 +64,9 @@ bool dfs(vector<vector<int>>& adj, int node, vector<int> &color)
 
     return true;
 }
-
-bool bipaartite(vector<vector<int>> &adj)
+bool isBipartite(vector<vector<int>> &adj)
 {
-    int n =adj.size;
+    int n = adj.size();
     vector<int> color(n, -1);
 
     for (int i = 0; i < n; i++)
@@ -75,7 +74,7 @@ bool bipaartite(vector<vector<int>> &adj)
         if (color[i] == -1)
         {
             color[i] = 0;
-            if (dfs(adj, i, color))
+            if (!dfs(adj, i, color))
                 return false;
         }
     }
