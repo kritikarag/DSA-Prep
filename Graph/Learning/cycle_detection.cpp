@@ -2,7 +2,7 @@ Using BFS
 
 bool cycleDetectionBFS(int v, vector<int> adj[])
 {
-    queue<int,int>q;
+    queue<pair<int,int>>q;
     vector<int>vis(n+1,0);
 
     for(int i=0;i<=n;i++){
@@ -10,7 +10,7 @@ bool cycleDetectionBFS(int v, vector<int> adj[])
             q.push({i,-1});
             vis[i]=1;
             while(!q.empty()){
-                int node = q.front();
+                aut node = q.front();
                 q.pop();
 
                 for(auto it: adj[node.first]){
