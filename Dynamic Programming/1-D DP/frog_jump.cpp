@@ -51,8 +51,9 @@ int frogJump(int n, int energy[])
 
     for(int i=1;i<n;i++){
         int step1 = prev1 + abs(energy[i] - energy[i - 1]);
+        int step2 = INT_MAX;
         if (n > 1)
-            int step2 = prev2 + abs(energy[i] - energy[i - 2]);
+            step2 = prev2 + abs(energy[i] - energy[i - 2]);
 
         int curr = min(step1, step2);
         prev2 = prev1;
