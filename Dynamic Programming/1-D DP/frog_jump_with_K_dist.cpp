@@ -19,6 +19,7 @@ int frogJump(int n, vector<int>&heights, vector<int>&dp,int k){
     for(int j=k;j>0;j--){
         if(n>=j)dp[n] = min(dp[n],frogJump(n-j,heights,dp,k)+abs(heights[n]-heights[n-j]));
     }
+    return dp[n];
 }
 
 //TABULATION
