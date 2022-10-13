@@ -1,4 +1,4 @@
-//
+// https://practice.geeksforgeeks.org/problems/shortest-path-in-weighted-undirected-graph/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=shortest-path-in-weighted-undirected-graph
 
 vector<int> shortestPath(int n, int m, vector<vector<int>> &edges)
 {
@@ -12,7 +12,7 @@ vector<int> shortestPath(int n, int m, vector<vector<int>> &edges)
 
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
     vector<int> dis(n + 1, INT_MAX), parent(n + 1);
-    for (int i = 0; i <= n; i++)
+    for (int i = 1; i <= n; i++)
         parent[i] = i;
     dis[1] = 0;
     pq.push({0, 1});
@@ -32,7 +32,7 @@ vector<int> shortestPath(int n, int m, vector<vector<int>> &edges)
             {
                 dis[temp] = curr + weight;
                 parent[temp] = node;
-                pq.push({temp, dis[temp]});
+                pq.push({dis[temp],temp});
             }
         }
     }
@@ -44,7 +44,7 @@ vector<int> shortestPath(int n, int m, vector<vector<int>> &edges)
     while (parent[node] != node)
     {
         path.push_back(node);
-        path[node] = node;
+        node = path[node];
     }
     path.push_back(1);
     reverse(path.begin(), path.end());
