@@ -58,3 +58,17 @@ vector<int>dijkstra(int v, vector<pair<int, int>> adj[], int src)
     }
     return dis;
 }
+
+#pragma region 
+    Time Complexity Derivation: O(V * (Pop vertices from min heap + 
+                                No. of edges * Push into PQ))
+
+                                = O(V * (log (heap size) + ne * log(heap size)))
+                                = O(V * (log(heap size) * (ne + 1)))
+                                = O(V * (log(heap size) * (V - 1 + 1)))
+                                = O(V * V * log(heap size))
+                                = O(V^2 * log(heap size))
+                                = O(V^2 * log(V^2))
+                                = O(V^2 * 2*logV)
+                                = O(E * 2*logV) ~ O(E * logV)               ~(No. of Edges = (No. of vertices)^2)
+#pragma endregion
