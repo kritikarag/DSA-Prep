@@ -50,7 +50,7 @@ int minPathSum(int m, int n, vector<vector<int>> &grid)
 // //SPACE OPTIMIZATION
 int minPathSum(int m, int n, vector<vector<int>> &grid)
 { 
-    vector<int> prev(m + 1, INT_MAX);
+    vector<int> prev(n + 1, INT_MAX);
 
     for (int i = 1; i <= m; i++)
     {
