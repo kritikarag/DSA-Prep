@@ -42,15 +42,14 @@ int maxpoints(int day, int last, vector<vector<int>>&vec, vector<vector<int>>&dp
             if(i!=last){
                 maxi = max(maxi,vec[0][i]);
             }
-
-            return dp[day][last] = maxi;
         }
+        return dp[day][last] = maxi;
     }
 
     int maxi =0;
     for(int i=1;i<=3;i++){
         if(i!=last){
-            int curr = vec[day-1][last-1] + maxpoints(m,day-1,i,vec,dp);
+            int curr = vec[day-1][i-1] + maxpoints(m,day-1,i,vec,dp);
             maxi = max(maxi,curr);
         }
     }
