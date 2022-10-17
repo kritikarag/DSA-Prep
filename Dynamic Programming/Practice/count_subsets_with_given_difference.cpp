@@ -24,7 +24,7 @@ int numSubsetsWithDiff(vector<int> &nums, int ind, int target, vector<vector<int
 {
     if (target == 0)
         return 1;
-    if (ind == 0)
+    if (ind == 1)
     {
         if (target == 0 && arr[0] == 0)
             return 2;
