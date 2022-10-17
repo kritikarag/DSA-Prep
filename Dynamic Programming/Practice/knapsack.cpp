@@ -19,7 +19,7 @@ int knapsack(int arr[],int wt[],int w,int n){
     for (int i = 0; i <= sum; i++)
         dp[0][i] = 0;
     for (int i = 0; i <= n; i++)
-        dp[i][0] = 1;
+        dp[i][0] = 0;
     for(inti=1;i<n+1;i++){
         for(int j=1;j<w+1;j++)
             if(wt[i-1]<=j){
