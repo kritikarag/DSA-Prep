@@ -17,7 +17,7 @@ int countSubsets(vector<int> &vec, int i, int target)
 
 int countSubsets(vector<int> &vec, int i, int target, vector<vector<int>>&dp)
 {
-    if(target==0)return 0;
+    if(target==0)return 1;
     if(i==1)return (vec[i-1]==target);
 
     if(dp[i][target]!=-1)return dp[i][target];
@@ -25,6 +25,8 @@ int countSubsets(vector<int> &vec, int i, int target, vector<vector<int>>&dp)
     int not_take = countSubsets(vec,i-1,target,dp);
     int take =0;
     if(vec[i-1]<=target)take = countSubsets(vec,i-1,target-vec[i-1],dp);
+
+    return dp[n][target];
 }
 
 //TABULATION
@@ -58,8 +60,8 @@ int countSubsets(vector<int> &vec, int n, int target)
         for(int j=1;j<=target;j++){
             int not_take = prev[j];
             int take = 0;
-            if(vec[i-1]<=j)take = dp[i-1][j-vec[i-1]];
-            curr[i] = take + not_take;
+            if(vec[i-1]<=j)take = prev[j-vec[i-1]];
+            curr[j] = take + not_take;
         }
         prev = curr;
     }
