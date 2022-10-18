@@ -103,3 +103,41 @@ int coinChange(vector<int> &coins, int amount)
     else
         return dp[n][amount];
 }
+
+Space Optimized:
+
+int coinChange(vector<int> &coins, int amount)
+{
+    int n = coins.size();
+
+    vector<int>prev(amount + 1, 0); 
+    for (int i = 1; i <= amount; i++)
+    {
+        if (i % coins[0] != 0)
+            prev[i] = 1e9;
+        else
+            prev[i] = i / coins[0];
+    }
+
+    for (int i = 2; i <= n; i++)
+    {
+        vector<int>curr(amount+1,0);
+        for (int j = 1; j <= amount; j++)
+        {
+            int not_take = prev[j];
+            int take = 1e9;
+            if (coins[i - 1] <= j)
+            {
+                take = 1 + curr[j - coins[i - 1]];
+            }
+
+            curr[j] = min(take, not_take);
+        }
+        prev = curr;
+    }
+
+    if (prev[amount] >= 1e9)
+        return -1;
+    else
+        return prev[amount];
+}
