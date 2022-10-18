@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//RECURSION
+// https://practice.geeksforgeeks.org/problems/longest-common-substring1452/1
+
+RECURSION
 
 int maxlength(int ind1 ,int ind2, string&a, string &b, int count){
     if(ind1<0||ind2<0)return count;
@@ -12,7 +14,7 @@ int maxlength(int ind1 ,int ind2, string&a, string &b, int count){
     return max(count,max(maxlength(ind1-1,ind2,a,b,0),maxlength(ind1,ind2-1,a,b,0)));
 }
 
-//MEMORIZATION
+MEMORIZATION  -> Needs Modification
 
 int solve(string s1, string s2, int ind1, int ind2, vector<vector<int>> &dp)
 {
@@ -45,7 +47,7 @@ int maxlength(int n, int m, string &a, string &b){
     return maxi;
 }
 
-//TABULATION
+TABULATION
 
 int maxlength(int n, int m,string &a, string &b){
     vector<vector<int>>dp(n+1,vector<int>(m+1,0));
@@ -64,7 +66,7 @@ int maxlength(int n, int m,string &a, string &b){
     return maxi;
 }
 
-// SPACE OPTIMIZATION
+SPACE OPTIMIZATION
 
 int maxlength(int n, int m, string &a, string &b)
 {
