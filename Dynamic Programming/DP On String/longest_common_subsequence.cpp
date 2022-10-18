@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// RECURSION
+// https://leetcode.com/problems/longest-common-subsequence/submissions/
+
+RECURSION
 int maxLength(int ind1, int ind2, string &a, string &b){
     if(ind1<0||ind2<0)return 0;
 
@@ -13,7 +15,7 @@ int maxLength(int ind1, int ind2, string &a, string &b){
     }
 }
 
-//MEMORIZATION
+MEMORIZATION
 
 int maxLength(int ind1, int ind2, string &a, string &b, vector<vector<int>>&dp){
     if(ind1<=0||ind2<=0)return 0;
@@ -27,7 +29,7 @@ int maxLength(int ind1, int ind2, string &a, string &b, vector<vector<int>>&dp){
     } 
 }
 
-//TABULATION
+TABULATION
 
 int maxlength(int ind1, int ind2, string &a, string &b){
     vector<vector<int>>dp(ind1+1,vector<int>(ind2+1,-1));
@@ -49,7 +51,7 @@ int maxlength(int ind1, int ind2, string &a, string &b){
     return dp[ind1][ind2];
 }
 
-//SPACE OPTIMIZATION
+SPACE OPTIMIZATION
 
 int maxLength(int ind1, int ind2, string &a, string &b){
     vector<int>prev(ind1+1,-1);
