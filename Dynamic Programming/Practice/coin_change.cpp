@@ -1,42 +1,104 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int coinChange(vector<int> &coin, int amount)
-{
-    int n = coin.size();
+Recursion :
 
-    int dp[n + 1][amount + 1];
-    for (int i = 0; i <= n; i++)
+int solve(int ind, vector<int> &coins, int amount)
+{
+    if (ind == 0)
     {
-        for (int j = 0; j <= amount; j++)
+        if (amount % coins[0] == 0)
         {
-            dp[i][j] = -1;
+            return amount / coins[0];
+        }
+        else
+        {
+            return 1e9;
         }
     }
 
-    for (int i = 0; i <= n; i++)
-        dp[i][0] = 0;
+    int not_take = solve(ind - 1, coins, amount);
+    int take = 1e9;
+    if (coins[ind] <= amount)
+        take = 1 + solve(ind, coins, amount - coins[ind]);
+
+    return min(not_take, take);
+}
+
+int coinChange(vector<int> &coins, int amount)
+{
+    int res = solve(coins.size() - 1, coins, amount);
+    return res >= 1e9 ? -1 : res;
+}
+
+Memorization :
+
+int solve(int ind, vector<int> &coins, int amount, vector<vector<int>>&dp)
+{
+    if (ind == 0)
+    {
+        if (amount % coins[0] == 0)
+        {
+            return amount / coins[0];
+        }
+        else
+        {
+            return 1e9;
+        }
+    }
+
+    if (dp[ind][amount] != -1)
+        return dp[ind][amount];
+    int not_take = solve(ind - 1, coins, amount,dp);
+    int take = 1e9;
+    if (coins[ind] <= amount)
+        take = 1 + solve(ind, coins, amount - coins[ind],dp);
+
+    return dp[ind][amount] = min(not_take, take);
+}
+
+int coinChange(vector<int> &coins, int amount)
+{
+
+    vector<vector<int>> dp(coins.size(), vector<int>(amount + 1, -1));
+    int res = solve(coins.size() - 1, coins, amount,dp);
+    return res >= 1e9 ? -1 : res;
+}
+
+Tabulation :
+
+int coinChange(vector<int> &coins, int amount)
+{
+    int n = coins.size();
+
+    vector<vector<int>> dp(n + 1, vector<int>(amount + 1, 0));
+
     for (int i = 0; i <= amount; i++)
         dp[0][i] = INT_MAX;
     for (int i = 1; i <= amount; i++)
     {
-        if (i % coin[0] != 0)
-            dp[1][i] = INT_MAX - 1;
+        if (i % coins[0] != 0)
+            dp[1][i] = 1e9;
         else
-            dp[1][i] = i / coin[0];
+            dp[1][i] = i / coins[0];
     }
 
     for (int i = 2; i <= n; i++)
     {
         for (int j = 1; j <= amount; j++)
         {
-            dp[i][j] = dp[i - 1][j];
-            if (coin[i - 1] <= j)
-                dp[i][j] = min(1 + dp[i][j - coin[i - 1]], dp[i][j]);
+            int not_take = dp[i - 1][j];
+            int take = 1e9;
+            if (coins[i - 1] <= j)
+            {
+                take = 1 + dp[i][j - coins[i - 1]];
+            }
+
+            dp[i][j] = min(take, not_take);
         }
     }
-    
-    if (dp[n][amount] == INT_MAX - 1)
+
+    if (dp[n][amount] >= 1e9)
         return -1;
     else
         return dp[n][amount];
