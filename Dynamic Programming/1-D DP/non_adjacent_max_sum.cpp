@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//RECURSION
+// https://leetcode.com/problems/house-robber/
+
+RECURSION
 int maxSum(int n, vector<int> &vec, vector<int> &dp)
 {
     if (n <= 0)
@@ -12,7 +14,9 @@ int maxSum(int n, vector<int> &vec, vector<int> &dp)
 
     return max(pick, not_pick);
 }
-//MEMORIZATION
+
+MEMORIZATION
+
 vector<int>dp(n,-1);
 int maxSum(int n, vector<int>&vec, vector<int>&dp){
     if(n<=0)return 0;
@@ -23,7 +27,8 @@ int maxSum(int n, vector<int>&vec, vector<int>&dp){
 
     return dp[n] = max(pick,not_pick);
 }
-//TABULATION
+
+TABULATION
 int maxSum(int n, vector<int>&vec){
 
     vector<int>dp(n);
@@ -37,7 +42,7 @@ int maxSum(int n, vector<int>&vec){
     return dp[n-1];
 }
 
-//SPACE OPTIMIZATION
+SPACE OPTIMIZATION
 
 int maxSum(int n, vector<int>&vec){
     int prev2 = vec[0];
