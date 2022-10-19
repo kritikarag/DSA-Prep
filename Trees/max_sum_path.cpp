@@ -1,15 +1,20 @@
-int maxSumPath(TreeNode*root,int &maxsum){
-    if(!root)return 0;
+// https://leetcode.com/problems/binary-tree-maximum-path-sum/
 
-    int leftsum = maxSumPath(root->left, maxsum);
-    int rightsum = maxSumPath(root->right,maxsum);
+int solve(TreeNode *root, int &ans)
+{
+    if (root == NULL)
+        return 0;
 
-    maxsum = max(maxsum, leftsum+rightsum+root->val);
+    int leftsum = max(solve(root->left, ans), 0);
+    int rightsum = max(solve(root->right, ans), 0);
 
-    return root->val+max(leftsum,rightsum);
+    ans = max(ans, leftsum + rightsum + root->val);
+
+    return root->val + max(rightsum, leftsum);
 }
-
-int maximumPathSum(TreeNode* root){
-    int maxsum=0;
-    maxSumPath(root,maxsum);
+int maxPathSum(TreeNode *root)
+{
+    int ans = INT_MIN;
+    solve(root, ans);
+    return ans;
 }
