@@ -31,7 +31,7 @@ int largestRectangleArea(vector<int> &height)
         st.push(i);
     }
 
-    int res = INT_MIN;
+    int res = 0;
     for (int i = 0; i < n; i++)
     {
         res = max(res, (right[i] - left[i] + 1) * height[i]);
@@ -45,7 +45,7 @@ int largestRectangleArea(vector<int> &height)
     height.push_back(0);
     int n = height.size();
     stack<int> st;
-    int res = INT_MIN;
+    int res = 0;
 
     for (int i = 0; i < n; i++)
     {
