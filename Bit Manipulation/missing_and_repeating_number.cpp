@@ -14,6 +14,7 @@ int find_set_bit(int n){
     return count;
 }
 
+
 int *findTwoElement(int *arr, int n)
 {
     // code here
