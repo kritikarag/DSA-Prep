@@ -1,26 +1,27 @@
-#include<bits/stdc++.h>
-using namespace std;
+// https://leetcode.com/problems/house-robber-ii/
 
-int maxAmount(int ind, int end, vector<int>&vec){
+int maxAmount(int ind, int end, vector<int> &vec)
+{
     int prev2 = vec[ind];
-    int prev1 = max(prev2,vec[ind+1]);
+    int prev1 = max(prev2, vec[ind + 1]);
 
-    for(int i=ind+2;i<end;i++){
-        int curr = max(prev1,prev2+vec[i]);
+    for (int i = ind + 2; i < end; i++)
+    {
+        int curr = max(prev1, prev2 + vec[i]);
         prev2 = prev1;
         prev1 = curr;
     }
 
     return prev1;
 }
-
-int main()
+int rob(vector<int> &nums)
 {
-    vector<int> vec = {2, 1, 4, 9, 11, 13, 12};//houses are arranged in circular manner
-    int n = vec.size();
-    int start = maxAmount(0,n-1,vec);
-    int finish = maxAmount(1,n,vec);
-    cout << max(start,finish) << endl;
-
-    return 0;
+    int n = nums.size();
+    if (n == 1)
+        return nums[0];
+    if (n == 2)
+        return max(nums[0], nums[1]);
+    int start = maxAmount(0, n - 1, nums);
+    int finish = maxAmount(1, n, nums);
+    return max(start, finish);
 }
