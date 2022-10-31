@@ -31,7 +31,7 @@ vector<vector<int>> verticalTraversal(TreeNode *root)
             temp.insert(temp.end(), p.second.begin(), p.second.end());
         }
 
-        temp.push_back(temp);
+        res.push_back(temp);
     }
 
     return res;
