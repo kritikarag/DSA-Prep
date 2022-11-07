@@ -1,12 +1,12 @@
 #include<bits/stdc++.h>
-using maspaace std;
+using namespace std;
 
 int dp[100][100];
 
 //RECURSIVE CODE
 int knapsack(int arr[],int wt[],int w,int n){
     if(n==0||w==0)return 0;
-    if(dp[n][w]!=-1)return dp[n][m];
+    if(dp[n][w]!=-1)return dp[n][w];
     if(wt[n-1]<=w){
         return dp[n][w]= max(arr[n-1]+knapsack(arr,wt,w-wt[n-1],n-1),knapsack(arr,wt,w,n-1));
     } 
@@ -16,11 +16,11 @@ int knapsack(int arr[],int wt[],int w,int n){
 //TOP-DOWN APPROACH
 
 int knapsack(int arr[],int wt[],int w,int n){
-    for (int i = 0; i <= sum; i++)
+    for (int i = 0; i <= w; i++)
         dp[0][i] = 0;
     for (int i = 0; i <= n; i++)
         dp[i][0] = 0;
-    for(inti=1;i<n+1;i++){
+    for(int i=1;i<n+1;i++){
         for(int j=1;j<w+1;j++)
             if(wt[i-1]<=j){
                 dp[i][j]=max(arr[i-1]+dp[i-1][j-wt[i-1]],dp[i-1][j]);
@@ -35,10 +35,10 @@ int knapsack(int arr[],int wt[],int w,int n){
 bool subsetsum(int arr[],int n,int sum){
     bool dp[n+1][sum+1];
     for(int j=0;j<=sum;j++){
-        dp[0][j]=False;
+        dp[0][j]=false;
     }
     for(int i=0;i<=n;i++){
-        dp[i][0]=True;
+        dp[i][0]=true;
     }
     for(int i=1;i<=n;i++){
         for(int j=1;j<=sum;j++){
@@ -64,7 +64,7 @@ bool equalpart(int arr[],int n){
 
 //NUMBER OF SUBSETS SUM EQUAL TO K
 
-int numubsets(int arr[],int n,int k){
+int numubsets(int arr[],int n,int k, int sum){
     int dp[n+1][k+1];
     for(int i=0;i<=sum;i++)dp[0][i]=0;
     for(int i=0;i<=n;i++)dp[i][0]=1;
@@ -81,7 +81,7 @@ int numubsets(int arr[],int n,int k){
 int minsubsetsumdiff(int arr[],int n){
     int sum=0;
     for(int i=0;i<n;i++)sum+=arr[i];
-    bool dp[n+1][sum+1]
+    bool dp[n+1][sum+1];
     for(int i=0;i<=sum;i++)dp[0][i]=false;
     for(int i=0;i<=n;i++)dp[i][0]=true;
 
