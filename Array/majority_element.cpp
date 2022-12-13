@@ -20,7 +20,7 @@ int majorityElement(vector<int> &nums)
     return res;
 }
 
-//METHOD 3
+//METHOD 3 The Boyer-Moore voting algorithm
 
 int majorityElement(vector<int>& nums) {
         int major=nums[0], count = 1;
