@@ -10,7 +10,7 @@ vector<int> search(vector<int> &nums, int low, int high, int target)
         vector<int> left = search(nums, low, mid, target);
         vector<int> right = search(nums, mid + 1, high, target);
 
-        if (left[0] == -1)
+        if (left[1] == -1)
             return right;
         if (right[0] == -1)
             return left;
