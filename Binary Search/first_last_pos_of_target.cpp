@@ -19,6 +19,7 @@ vector<int> search(vector<int> &nums, int low, int high, int target)
     return {-1, -1};
 }
 
+
 vector<int> searchRange(vector<int> &nums, int target)
 {
     int n = nums.size();
