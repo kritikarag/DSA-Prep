@@ -38,3 +38,29 @@ string longestPalindrome(string s1)
 
     return res;
 }
+
+string longestPalindrome(string s)
+{
+    int n = s.length();
+    int pos = 0;
+    int len = 1;
+    for (int i = 0; i < n;)
+    {
+        int left = i, right = i;
+        while (right < n && s[right] == s[right + 1])
+            right++;
+        i = right + 1;
+        while (right < n && left > 0 && s[right + 1] == s[left - 1])
+        {
+            right++;
+            left--;
+        }
+        int curr_len = right - left + 1;
+        if (curr_len > len)
+        {
+            len = curr_len;
+            pos = left;
+        }
+    }
+    return s.substr(pos, len);
+}
