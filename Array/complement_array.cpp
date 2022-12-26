@@ -1,6 +1,7 @@
 // https://practice.geeksforgeeks.org/problems/complement3911/1
 
 /*Let's say we chose indices L and R 
+
 Now let's look at what is the net change in number of 1s in string S when we complement the characters between L and R.
 Let's say initially it has A 0s and B 1s. Eventually, there will be B 0s and A 1s.
 So, number of 1s increase by A - B.We want to choose a subarray which maximises this.
