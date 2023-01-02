@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/delete-node-in-a-bst/description/?envType=study-plan&id=data-structure-ii
+// https://leetcode.com/problems/delete-node-in-a-bst/description/
 
 TreeNode *deleteNode(TreeNode *root, int key)
 {
