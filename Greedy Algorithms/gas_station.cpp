@@ -1,13 +1,23 @@
-int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
-         int tc=0,cc=0,s=0;
-        int n=gas.size();
-        for(int i=0;i<n;i++){
-            tc+=gas[i]-cost[i];
-            cc+=gas[i]-cost[i];
-            if(cc<0){
-                cc=0;
-                s=i+1;
-            }
+// https://leetcode.com/problems/gas-station/description/
+
+we know if we run out of fuel say at some ith gas station. 
+All the gas station between ith and starting point are bad starting point as well.
+So, this means we can start trying at next gas station on the i + 1 station
+
+int canCompleteCircuit(vector<int> &gas, vector<int> &cost)
+{
+    int total_surplus = 0, curr_surplus = 0, start = 0;
+    for (int i = 0; i < gas.size(); i++)
+    {
+        total_surplus += gas[i] - cost[i];
+        curr_surplus += gas[i] - cost[i];
+
+        if (curr_surplus < 0)
+        {
+            curr_surplus = 0;
+            start = i + 1;
         }
-        return (tc>=0)?s:-1;
     }
+
+    return (total_surplus < 0) ? -1 : start;
+}
