@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/number-of-pairs-satisfying-inequality/description/
 
+
+Overall TC: O(N log^(2)N)
 long long int count = 0;
 void checkcount(vector<int> &vec, int start, int mid, int end, int d)
 {
@@ -16,9 +18,11 @@ void checkcount(vector<int> &vec, int start, int mid, int end, int d)
             r++;
         }
     }
+    // Double pointer approach can be used for decreasing TC
     sort(vec.begin() + start, vec.begin() + end + 1);
     return;
 }
+
 void mergesort(vector<int> &vec, int start, int end, int d)
 {
     if (start == end)
@@ -30,6 +34,7 @@ void mergesort(vector<int> &vec, int start, int end, int d)
     checkcount(vec, start, mid, end, d);
     return;
 }
+
 long long numberOfPairs(vector<int> &nums1, vector<int> &nums2, int d)
 {
     int n = nums1.size();
