@@ -1,6 +1,5 @@
 // https://leetcode.com/problems/number-of-pairs-satisfying-inequality/description/
 
-
 Overall TC: O(N log^(2)N)
 long long int count = 0;
 void checkcount(vector<int> &vec, int start, int mid, int end, int d)
@@ -27,7 +26,9 @@ void mergesort(vector<int> &vec, int start, int end, int d)
 {
     if (start == end)
         return;
+    
     int mid = (start + end) / 2;
+    
     mergesort(vec, start, mid, d);
     mergesort(vec, mid + 1, end, d);
 
