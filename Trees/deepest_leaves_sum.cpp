@@ -9,6 +9,7 @@ int deepestLeavesSum(TreeNode *root)
     while (!q.empty())
     {
         int n = q.size();
+        // Resetting sum bcz at this point we know that there exist a deeper level that we need to explore
         ans = 0;
         while (n--)
         {
