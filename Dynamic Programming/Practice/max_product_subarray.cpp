@@ -1,4 +1,4 @@
-//
+// https://leetcode.com/problems/maximum-product-subarray/description/
 
 /*A way to understand the reason why the maximum subarray must be a prefix of suffix of the array:
 suppose there's no 0 in the array:
