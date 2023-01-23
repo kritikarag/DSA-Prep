@@ -17,6 +17,7 @@ void bt(vector<int> &nums, vector<int> &seq, set<vector<int>> &res, int index)
         }
     }
 }
+
 vector<vector<int>> findSubsequences(vector<int> &nums)
 {
     set<vector<int>> res;
