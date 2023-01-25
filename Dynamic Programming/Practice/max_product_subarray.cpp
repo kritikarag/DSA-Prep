@@ -3,9 +3,9 @@
 /*A way to understand the reason why the maximum subarray must be a prefix of suffix of the array:
 suppose there's no 0 in the array:
 
-if number of negative number is odd, and left most is i and right most is j,
+If number of negative number is odd, and left most is i and right most is j,
 then we can only either keep A[:j] or A[i+1:] to make it max
-if it's even, then we just multiply all the numbers.
+If it's even, then we just multiply all the numbers.
 0 will divide the array to several separated subarrays*/
 
 int maxProduct(vector<int> A)
