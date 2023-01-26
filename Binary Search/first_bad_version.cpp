@@ -17,6 +17,7 @@ int firstBadVersion(int n)
     return ans;
 }
 
+
 int firstBadVersion(int n)
 {
     int low = 1, high = n;
