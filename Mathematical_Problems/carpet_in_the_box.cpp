@@ -25,5 +25,6 @@ int carpetBox(int a, int b, int c, int d)
             count++;
         }
     }
+    
     return count;
 }
