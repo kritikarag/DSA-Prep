@@ -5,6 +5,7 @@ bool isAlienSorted(vector<string> &W, string O)
     unordered_map<char, int> alpha;
     for (int i = 0; i < O.size(); i++)
         alpha[O[i]] = i;
+    
     for (int i = 1; i < W.size(); i++)
     {
         string a = W[i - 1], b = W[i];
@@ -19,5 +20,6 @@ bool isAlienSorted(vector<string> &W, string O)
                 return false;
         }
     }
+
     return true;
 }
