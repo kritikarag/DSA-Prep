@@ -13,6 +13,7 @@ int findFirstNode(Node *head)
         if (fast == slow)
             break;
     }
+    
     if (!fast || !fast->next)
         return -1;
 
