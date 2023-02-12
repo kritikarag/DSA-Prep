@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/minimum-fuel-cost-to-report-to-the-capital/description/
 
+/*We need to track the number of people that reach each node and divide that by the number of seats per car, 
+this will tell us the number of cars required to take us to the node that is closer to node0*/
 long long ans = 0, s;
 long long dfs(int i, int prev, vector<int> adj[], int people = 1)
 {
