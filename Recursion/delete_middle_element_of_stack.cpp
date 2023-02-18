@@ -22,6 +22,7 @@ int main()
     st.push(76);
     st.push(53);
     st.push(34);
+    st.push(32);
 
     int n = st.size();
     deletemiddle(st,0);
