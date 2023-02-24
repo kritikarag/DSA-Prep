@@ -23,5 +23,6 @@ int findMaximizedCapital(int k, int w, vector<int> &profits, vector<int> &capita
         w += maximizeCapital.top();
         maximizeCapital.pop();
     }
+    
     return w;
 }
