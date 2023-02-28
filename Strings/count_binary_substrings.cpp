@@ -15,4 +15,5 @@ int countBinarySubstrings(string s)
         }
     }
     return res + min(curr, prev);
+    
 }
