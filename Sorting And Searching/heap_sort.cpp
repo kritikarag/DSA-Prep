@@ -31,6 +31,6 @@ void heapsort(vector<int> &vec, int n)
 vector<int> sortArray(vector<int> &nums)
 {
     heapsort(nums, nums.size());
-
     return nums;
+    
 }
