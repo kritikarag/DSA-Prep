@@ -11,6 +11,7 @@ long long getHoursToEatAll(vector<int>&piles, int bananasPerHour)
     return totalHours;
 }
 
+
 int minEatingSpeed(vector<int>& piles, int targetHours)
 {
     int low = 1, high = *(max_element(piles.begin(), piles.end()));
