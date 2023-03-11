@@ -2,7 +2,7 @@
 
 long long maxTripletProduct(long long arr[], int n)
 {
-    // Complete the function
+    
     long long mini1 = INT_MAX, mini2 = INT_MAX, maxi1 = INT_MIN, maxi2 = INT_MIN, maxi3 = INT_MIN;
     for (int i = 0; i < n; i++)
     {
