@@ -8,6 +8,7 @@ struct compare
     }
 };
 
+
 ListNode *mergeKLists(vector<ListNode *> &lists)
 {
     ListNode *temp = new ListNode(0);
