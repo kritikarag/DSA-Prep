@@ -5,6 +5,7 @@ bool isCompleteTree(TreeNode *root)
     queue<TreeNode *> q;
     q.push(root);
     int i = 0, f = 0;
+    
     while (!q.empty())
     {
         auto node = q.front();
