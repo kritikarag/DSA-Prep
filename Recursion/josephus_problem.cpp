@@ -7,6 +7,7 @@ void calculate(vector<int>&vec, int i, int k){
     vec.erase(vec.begin()+index);
     calculate(vec,index,k);
 }
+
 int main(){
     int n,k;
     cin>>n>>k;
