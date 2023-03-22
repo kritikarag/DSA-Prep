@@ -22,6 +22,7 @@ bool isPerfectSquare(int num)
     return false;
 }
 
+
 //METHOD 2
 bool isPerfectSquare(int num)
 {
