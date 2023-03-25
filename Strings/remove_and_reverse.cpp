@@ -2,6 +2,7 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+
 string removeReverse(string str)
 {
     string temp = str;
