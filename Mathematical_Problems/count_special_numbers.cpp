@@ -28,6 +28,7 @@ int countSpecialNumbers(int N, vector<int> arr)
     }
 
     int ans = 0;
+    
     for (int i : arr)
     {
         if (mp[i] > 1 || vis[i])
