@@ -19,8 +19,8 @@ int unknapsack(int arr[], int val[],int n,int k){
 
 //ROD CUTTING PROBLEM
 
-int rodcut(inr cost[],int n){
-    int sum=cost.size();
+int rodcut(int cost[],int n){
+    int sum = cost.size();
     // for(int i=0;i<n;i++)
     //     sum+=cost[i];
     int dp[n + 1][sum + 1];
@@ -33,7 +33,7 @@ int rodcut(inr cost[],int n){
     for(int i=1;i<=n;i++){
         for(int j=1;j<=sum;j++){
             dp[i][j]=dp[i-1][j];
-            if(arr[i-1]<=j)dp[i][j]=max(cost[i-1]+dp[i][j-cost[i-1]],dp[i][j]);
+            if(cost[i-1]<=j)dp[i][j]=max(cost[i-1]+dp[i][j-cost[i-1]],dp[i][j]);
         }
     }
 
