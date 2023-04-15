@@ -16,11 +16,13 @@ vector<long long int> countZero(int n, int k, vector<vector<int>> &arr)
             ++r[x];
             ++rowc;
         }
+
         if (c.find(y) == c.end())
         {
             ++c[y];
             ++colc;
         }
+
         long long int a = n * n - ((rowc + colc) * n) + (rowc * colc);
         ans.push_back(a);
     }
