@@ -1,12 +1,13 @@
 // https://leetcode.com/problems/maximum-length-of-repeated-subarray/
-
+#include<bits/stdc++.h>
+using namespace std;
 //1ST APPROACH
 int findLength(vector<int> &nums1, vector<int> &nums2)
 {
     int n = nums1.size(), m = nums2.size();
 
     vector<vector<int>> dp(n + 1, vector<int>(m + 1, 0));
-    
+
     int maxi = 0;
 
     for (int i = 1; i <= n; i++)
