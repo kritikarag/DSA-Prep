@@ -11,6 +11,7 @@ int main(){
         int n;
         cin >> n;
         vector<int> costs(n);
+        
         for (int i = 0; i < n; i++)
         {
             cin >> costs[i];
