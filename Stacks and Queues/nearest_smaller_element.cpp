@@ -31,6 +31,7 @@ vector<int> nearestSmallerTower(vector<int> arr)
             right[i] = -1;
         else
             right[i] = st.top().second;
+        
         st.push({arr[i], i});
     }
 
