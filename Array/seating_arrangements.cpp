@@ -32,5 +32,6 @@ bool is_possible_to_get_seats(int n, int m, vector<int> &seats)
             }
         }
     }
+    
     return (n <= 0);
 }
