@@ -2,6 +2,7 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+
 bool is_possible_to_get_seats(int n, int m, vector<int> &seats)
 {
     // Write your code here.
