@@ -24,6 +24,7 @@ bool is_possible_to_get_seats(int n, int m, vector<int> &seats)
                 n--;
             }
         }
+        
         else
         {
             if (seats[i - 1] == 0 && seats[i + 1] == 0 && seats[i] == 0)
