@@ -6,6 +6,7 @@ int main(){
     cin>>n;
     cin >> sum;
     int mod = 1e9+7;
+    
     vector<int>coins(n);
     
     for(int i=0;i<n;i++){
