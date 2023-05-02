@@ -4,8 +4,7 @@ using namespace std;
 int main(){
     int n, x;
     cin >> n >> x;
-    vector<int>coins(n);
-    vector<int>dp(x+1);
+    vector<int>coins(n),dp(x+1);
     int mod = 1e9+7;
     for (int i = 0; i < n; i++)
     {
