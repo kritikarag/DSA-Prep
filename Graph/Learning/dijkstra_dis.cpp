@@ -1,6 +1,6 @@
 // https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
 
-Dijksta's Algorithm : Shortest distance for undirected weighted graph with positive edge weights
+//Dijksta's Algorithm : Shortest distance for undirected weighted graph with positive edge weights
 
 Using Queue:-
 TC: ElogV
@@ -59,7 +59,7 @@ vector<int>dijkstra(int v, vector<pair<int, int>> adj[], int src)
     return dis;
 }
 
-#pragma region 
+/*pragma region 
     Time Complexity Derivation: O(V * (Pop vertices from min heap + 
                                 No. of edges * Push into PQ))
 
@@ -71,4 +71,4 @@ vector<int>dijkstra(int v, vector<pair<int, int>> adj[], int src)
                                 = O(V^2 * log(V^2))
                                 = O(V^2 * 2*logV)
                                 = O(E * 2*logV) ~ O(E * logV)               ~(No. of Edges = (No. of vertices)^2)
-#pragma endregion
+pragma endregion*/
