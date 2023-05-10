@@ -2,6 +2,7 @@ bool isLeaf(TreeNode *root)
 {
     return !root->left && !root->right;
 }
+
 void addLeftBoundary(TreeNode *root, vector<int> &res)
 {
     TreeNode *curr = root->left;
