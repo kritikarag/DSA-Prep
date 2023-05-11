@@ -6,6 +6,7 @@ bool isLeaf(TreeNode *root)
 void addLeftBoundary(TreeNode *root, vector<int> &res)
 {
     TreeNode *curr = root->left;
+    
     while (curr)
     {
         if (!isLeaf(curr))
