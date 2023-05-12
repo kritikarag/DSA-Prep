@@ -10,8 +10,7 @@ void recursiveinsert(vector<int>&vec, int x){
     int val = vec[vec.size()-1];
     vec.pop_back();
     recursiveinsert(vec,x);
-    vec.push_back(val);
-    return;
+    vec.push_back(val); 
 }
 
 void recursivesort(vector<int>&vec){
