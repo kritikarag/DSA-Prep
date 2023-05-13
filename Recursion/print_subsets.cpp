@@ -1,6 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//For Duplicate Elements
+void printsubsets(string str, int i, string res)
+{
+    if (i >= str.length())
+    {
+        cout << res << " "; 
+        return;
+    }
+
+    printsubsets(str, i + 1, res + str[i]);
+    printsubsets(str, i + 1, res);
+}
 // To store only the unique elements
 unordered_set<string>s;
 void printsubsets(string str, int i, string res){
