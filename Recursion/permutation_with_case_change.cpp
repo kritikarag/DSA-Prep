@@ -2,6 +2,7 @@
 using namespace std;
 
 unordered_set<string>s;
+
 void permutation(string str, int i, string res){
     if(i==str.length()){
         s.insert(res);
@@ -12,6 +13,7 @@ void permutation(string str, int i, string res){
     char temp = str[i]-32;
     permutation(str, i + 1, res + temp);
 }
+
 int main(){
     string str;
     cin>>str;
