@@ -5,6 +5,8 @@ int largestRectangleArea(vector<int> &height)
     int n = height.size();
     stack<int> st;
     vector<int> left(n, 0);
+
+    // O(N) + O(N)
     for (int i = 0; i < n; i++)
     {
         while (!st.empty() && height[st.top()] >= height[i])
