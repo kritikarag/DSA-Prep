@@ -62,7 +62,7 @@ int ninjaTraining(vector<vector<int>>&vec){
     return maxpoints(n-1,3,vec,dp);
 }
 
-//TABULATION (INCOMPLETE)
+//TABULATION 
 
 int ninjaTraining(vector<vector<int>> &vec)
 {
@@ -86,8 +86,42 @@ int ninjaTraining(vector<vector<int>> &vec)
             }
         }
     }
-
     return dp[n-1][3];
+}
+
+//SPACE OPTIMIZED
+
+int ninjaTraining(vector<vector<int>> &vec)
+{
+    int n = vec.size();
+    int m = vec[0].size();
+    vector<vector<int>> dp(n, vector<int>(4, 0));
+    vector<int>curr(4,0),prev(4,0);
+    for (int i = 0; i <= 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            if (i != j)
+            {
+                curr[i] = max(vec[0][j], curr[i]);
+            }
+        }
+    }
+    for (int day = 1; day < n; day++)
+    {
+        prev = curr;
+        for (int last = 0; last <= 3; last++)
+        {
+            for (int task = 0; task < 3; task++)
+            {
+                if (task != last)
+                {
+                    curr[last] = max(curr[last], prev[task] + vec[day][task]);
+                }
+            }
+        }
+    }
+    return curr[3];
 }
 int main()
 {
