@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//RECUSION
+//RECUrSION
 
 int minPathSum(int i, int j, vector<vector<int>> &grid)
 {
@@ -28,7 +28,7 @@ int minpathsum(int i, int j,vector<vector<int>>&grid,vector<vector<int>>&dp)
     return dp[i][j];
 }
 
-// //TABULATION
+//TABULATION
 
 int minPathSum(int m, int n, vector<vector<int>> &grid)
 { 
@@ -47,7 +47,7 @@ int minPathSum(int m, int n, vector<vector<int>> &grid)
     return dp[m][n];
 }
 
-// //SPACE OPTIMIZATION
+//SPACE OPTIMIZATION
 int minPathSum(int m, int n, vector<vector<int>> &grid)
 { 
     vector<int> prev(n + 1, INT_MAX);
