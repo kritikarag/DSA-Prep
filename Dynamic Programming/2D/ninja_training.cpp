@@ -47,9 +47,9 @@ int maxpoints(int day, int last, vector<vector<int>>&vec, vector<vector<int>>&dp
     }
 
     int maxi =0;
-    for(int i=1;i<=3;i++){
+    for(int i=0;i<3;i++){
         if(i!=last){
-            int curr = vec[day-1][i-1] + maxpoints(m,day-1,i,vec,dp);
+            int curr = vec[day][i] + maxpoints(day-1,i,vec,dp);
             maxi = max(maxi,curr);
         }
     }
@@ -68,15 +68,26 @@ int ninjaTraining(vector<vector<int>> &vec)
 {
     int n = vec.size();
     int m = vec[0].size();
-    vector<vector<int>> dp(n + 1, vector<int>(m + 1, 0));
-    for(int i=0;i<=m;i++){
-        dp[1][i]=0;
-        for(int j=0;j<m;j++){
+    vector<vector<int>> dp(n, vector<int>(4, 0));
+    for(int i=0;i<=3;i++){
+         for(int j=0;j<3;j++){
             if(i!=j){
-                dp[1][i]=max(dp[1][i],vec[i-1][j]);
+                dp[0][i] = max(vec[0][j],dp[0][i]);
+            }
+         }
+    }
+    for(int day=1;day<n;day++){ 
+        for(int last=0;last<=3;last++){
+            for(int task=0;task<3;task++){
+                if (task != last)
+                {
+                    dp[day][last] = max(dp[day][last], dp[day - 1][task]+vec[day][task]);
+                }
             }
         }
     }
+
+    return dp[n-1][3];
 }
 int main()
 {
