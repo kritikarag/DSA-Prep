@@ -37,7 +37,7 @@ int frogJump(int n, int energy[])
         if(n>1)
             int step2 = dp[n - 2] + abs(energy[i] - energy[i - 2]);
 
-        dp[i] min(step1, step2);
+        dp[i] = min(step1, step2);
     }
 
     return dp[n-1];
