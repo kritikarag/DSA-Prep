@@ -4,7 +4,7 @@ int frogJump(int n, vector<int>&heights){
     int steps = INT_MAX;
     for(int j=1;j<k;j++){
         if(n>=j){
-            int jump = find(n - k, heights) + abs(heights[n] - height[n - j]);
+            int jump = find(n - k, heights) + abs(heights[n] - heights[n - j]);
             steps = min(steps, jump);
         }
     }
