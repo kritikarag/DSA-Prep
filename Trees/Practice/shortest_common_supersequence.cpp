@@ -1,4 +1,4 @@
-//
+// https://leetcode.com/problems/shortest-common-supersequence/description/
 
 #include<bits/stdc++.h>
 using namespace std;
