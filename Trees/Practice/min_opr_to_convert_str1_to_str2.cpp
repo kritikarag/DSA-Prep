@@ -1,9 +1,9 @@
 //
 
-int canYouMake(string &str, string &ptr)
+int canYouMake(string &word1, string &word2)
 {
     // Write your code here.
-    int n = str.length(), m = ptr.length();
+    int n = word1.length(), m = word2.length();
 
     vector<vector<int>> dp(n + 1, vector<int>(m + 1, 0));
 
@@ -11,7 +11,7 @@ int canYouMake(string &str, string &ptr)
     {
         for (int j = 1; j <= m; j++)
         {
-            if (str[i - 1] == ptr[j - 1])
+            if (word1[i - 1] == word2[j - 1])
             {
                 dp[i][j] = 1 + dp[i - 1][j - 1];
             }
