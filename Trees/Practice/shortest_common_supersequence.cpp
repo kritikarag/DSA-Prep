@@ -5,7 +5,6 @@ using namespace std;
 string shortestCommonSupersequence(string str1, string str2)
 {
     int n = str1.length(), m = str2.length();
-
     vector<vector<int>> dp(n + 1, vector<int>(m + 1, 0));
     string ans = "";
     for (int i = 1; i <= n; i++)
