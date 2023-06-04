@@ -5,6 +5,7 @@ using namespace std;
 
 void getparents(int node, int parent, vector<int>tree[], vector<int>&parents){
     parents[node] = parent;
+
     for(int i:tree[node]){
         if(i==parent)continue;
         getparents(i,node,tree,parents);
@@ -21,7 +22,6 @@ int KthAncestor(int node, vector<int>tree[], int n, int k){
 
     return node;
 }
-
 
 // For a range of queries
 int n;
@@ -43,6 +43,7 @@ int KthAncestor(int node, vector<int> tree[], int n, int k)
 {
 
     int count = 0,node;
+    
     while(k){
         if(k&1){
             node = parents[node][count];

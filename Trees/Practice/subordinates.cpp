@@ -62,6 +62,7 @@ int main()
 {
     int n;
     cin >> n;
+    
     vector<int> ans(n + 1), adj[n + 1];
     ans[0] = 0;
     ans[1] = n - 1;
