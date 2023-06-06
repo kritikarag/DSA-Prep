@@ -37,3 +37,5 @@ bool stoneGame(vector<int> &piles)
 
     return dp[0][n-1]>0;
 }
+
+//SPACE OPTIMIZED
