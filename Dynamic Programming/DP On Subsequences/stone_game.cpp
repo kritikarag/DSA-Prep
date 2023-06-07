@@ -14,6 +14,7 @@ int solve(int i, int j, vector<int> &piles, vector<vector<int>> &dp)
         return dp[i][j];
     return dp[i][j] = max(piles[i] - solve(i + 1, j, piles, dp), piles[j] - solve(i, j - 1, piles, dp));
 }
+
 bool stoneGame(vector<int> &piles)
 {
     int n = piles.size(); 
