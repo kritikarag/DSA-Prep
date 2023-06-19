@@ -51,6 +51,7 @@ int main(){
 
     vector<int> ans(n);  
     ans [0] = bfs(0,graph);
+    
     // for(int i=0;i<n;i++){
     //     ans[i] = bfs(i,graph);
     // }
