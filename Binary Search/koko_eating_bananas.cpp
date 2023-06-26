@@ -8,6 +8,7 @@ long long getHoursToEatAll(vector<int>&piles, int bananasPerHour)
         int hoursToEatPile = ceil(piles[i] / (double)bananasPerHour);
         totalHours += hoursToEatPile;
     }
+    
     return totalHours;
 }
 
