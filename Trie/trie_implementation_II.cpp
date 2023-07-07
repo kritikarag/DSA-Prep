@@ -42,6 +42,7 @@ struct Node
 };
 class Trie
 {
+    
 private:
     Node *root;
 
