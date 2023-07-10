@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 struct Node
 {
     Node *links[26];
@@ -35,6 +34,7 @@ struct Node
     {
         end--;
     }
+    
     void delprefix()
     {
         count_prefix--;
