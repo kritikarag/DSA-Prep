@@ -40,6 +40,7 @@ struct Node
         count_prefix--;
     }
 };
+
 class Trie
 {
     
