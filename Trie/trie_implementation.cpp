@@ -54,6 +54,7 @@ public:
     bool search(string word)
     {
         Node *node = root;
+        
         for (int i = 0; i < word.size(); i++)
         {
             if (!node->containsKey(word[i]))
