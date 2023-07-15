@@ -7,6 +7,7 @@ class twoStacks
     int top1, top2;
 
 public:
+
     twoStacks(int n = 100)
     {
         size = n;
