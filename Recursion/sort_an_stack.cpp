@@ -16,7 +16,7 @@ void descendinginsertion(stack<int>&st, int x){
 
 void descendingsortstack(stack<int> &st)
 {
-    if (st.size() <= 1)
+    if (st.size() <= 0)
         return;
     int temp = st.top();
     st.pop();
