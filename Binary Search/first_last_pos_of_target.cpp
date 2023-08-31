@@ -29,3 +29,56 @@ vector<int> searchRange(vector<int> &nums, int target)
     }
     return search(nums, 0, n - 1, target);
 }
+
+// Approach 2
+
+int findsmall(vector<int>& nums, int target){
+        int ans = -1;
+
+        int low = 0, high = nums.size() - 1;
+
+        while(low<=high){
+            int mid = low + (high-low)/2;
+
+            if(nums[mid]==target){
+                ans = mid;
+                high = mid-1;
+            }
+            else if (nums[mid]>target){
+                high = mid-1;
+            }
+            else low = mid+1;
+        }
+        return ans;
+    }
+
+    int findbig(vector<int>& nums, int target){
+        int ans = -1;
+
+        int low = 0, high = nums.size() - 1;
+
+        while(low<=high){
+            int mid = low + (high-low)/2;
+
+            if(nums[mid]==target){
+                ans = mid;
+                low = mid+1;
+            }
+            else if(nums[mid]<target){
+                low = mid+1;
+            }
+            else high = mid-1;
+        }
+        return ans;
+    }
+
+    vector<int> searchRange(vector<int>& nums, int target) {
+        vector<int>ans;
+        int small = findsmall(nums,target);
+        int big = findbig(nums,target);
+
+        ans.push_back(small);
+        ans.push_back(big);
+
+        return ans;
+    }
