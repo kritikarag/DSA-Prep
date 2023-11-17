@@ -31,6 +31,8 @@ int countSubstrings(string s)
             res += solve(i, j);
         }
     }
+
+    
     return res;
 }
 
