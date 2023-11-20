@@ -1,4 +1,7 @@
-// https://leetcode.com/problems/reduction-operations-to-make-the-array-elements-equal/description/?envType=daily-question&envId=2023-11-19
+// https://leetcode.com/problems/reduction-operations-to-make-the-array-elements-equal/description/
+
+
+//Method 1: Sorting
 
 int reductionOperations(vector<int> &nums)
 {
@@ -16,3 +19,5 @@ int reductionOperations(vector<int> &nums)
 
     return result;
 }
+
+// Method 2: Hashing
