@@ -30,7 +30,7 @@ bool cycleDetectionBFS(int v, vector<int> adj[])
 
 USING DFS
 
-bool(vector<int>adj[], int node, int par, vector<int>&vis){
+bool dfs(vector<int>adj[], int node, int par, vector<int>&vis){
     vis[node]=1;
     for(auto it: adj[node]){
         if(vis[it]){
