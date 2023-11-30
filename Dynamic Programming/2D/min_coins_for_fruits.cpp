@@ -3,6 +3,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//Memoization
+
 vector<vector<int>> dp;
 int solve(int index, vector<int> &prices, int rem)
 {
@@ -26,3 +28,5 @@ int minimumCoins(vector<int> &prices)
 
     return solve(0, prices, 0);
 }
+
+// Tabulation
