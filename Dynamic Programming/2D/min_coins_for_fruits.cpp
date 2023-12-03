@@ -21,6 +21,7 @@ int solve(int index, vector<int> &prices, int rem)
 
     return dp[index][rem] = min(take, not_take);
 }
+
 int minimumCoins(vector<int> &prices)
 {
     int n = prices.size();
