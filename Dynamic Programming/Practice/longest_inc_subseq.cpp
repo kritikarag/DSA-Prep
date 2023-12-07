@@ -45,3 +45,5 @@ int lengthOfLIS(vector<int>& nums) {
     }
 
 // Memory Optimized
+
+// Print the lis
