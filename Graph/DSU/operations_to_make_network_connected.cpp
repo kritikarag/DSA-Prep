@@ -32,7 +32,7 @@ void combine(int x, int y, vector<int> &parent, vector<int> &rank)
 
 int makeConnected(int n, vector<vector<int>> &conns)
 {
-    vector<int> parent(n), rank(n, 0);
+    vector<int> parent(n), rank(n, 1);
     for (int i = 0; i < n; i++)
     {
         parent[i] = i;
