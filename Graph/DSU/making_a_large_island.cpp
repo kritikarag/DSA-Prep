@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/making-a-large-island/description/
 
-#inlude<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 vector<int> parent, cap, vis;
