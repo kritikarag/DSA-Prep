@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/maximal-square/
-
+#include<bits/stdc+.h>
+using namespace std;
 int maximalSquare(vector<vector<char>> &matrix)
 {
     int n = matrix.size(), m = matrix[0].size();
