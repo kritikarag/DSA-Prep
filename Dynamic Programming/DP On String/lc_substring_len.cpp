@@ -14,7 +14,7 @@ int maxlength(int ind1 ,int ind2, string&a, string &b, int count){
     return max(count,max(maxlength(ind1-1,ind2,a,b,0),maxlength(ind1,ind2-1,a,b,0)));
 }
 
-MEMORIZATION  -> Needs Modification
+MEMORIZATION 
 
 int solve(string s1, string s2, int ind1, int ind2, vector<vector<int>> &dp)
 {
