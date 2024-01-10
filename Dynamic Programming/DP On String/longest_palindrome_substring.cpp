@@ -1,5 +1,66 @@
 // https://leetcode.com/problems/longest-palindromic-substring/
 
+vector<vector<int>> dp;
+int res = 0;
+int index = 0;
+int solve(int i, int j, string &s, string &r)
+{
+    if (i < 0 || j < 0)
+        return 0;
+
+    if (dp[i][j] != -1)
+        return dp[i][j];
+
+    if (s[i] == r[j])
+    {
+        dp[i][j] = 1 + solve(i - 1, j - 1, s, r);
+    }
+    else
+    {
+        dp[i][j] = 0;
+    }
+
+    solve(i - 1, j, s, r);
+    solve(i, j - 1, s, r);
+
+    return dp[i][j];
+}
+string longestPalindrome(string s)
+{
+    int n = s.length();
+    string r = s;
+    reverse(r.begin(), r.end());
+
+    dp.resize(n, vector<int>(n, -1));
+
+    solve(n - 1, n - 1, s, r);
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (dp[i][j] > res)
+            {
+                // cout<<i<<" "<<dp[i][j]<<endl;
+                string temp1 = s.substr(i - dp[i][j] + 1, dp[i][j]);
+                string temp2 = temp1;
+                reverse(temp2.begin(), temp2.end());
+
+                if (temp1 == temp2)
+                {
+                    index = i;
+                    res = dp[i][j];
+                }
+            }
+        }
+    }
+    string ans = "";
+    while (res--)
+    {
+        ans += s[index--];
+    }
+    return ans;
+}
+
 string longestPalindrome(string s1)
 {
     string s2 = s1;
