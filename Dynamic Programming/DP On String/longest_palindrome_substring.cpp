@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/longest-palindromic-substring/
 
+#include<bits/stdc++.h>
+using namespace std;
 vector<vector<int>> dp;
 int res = 0;
 int index = 0;
