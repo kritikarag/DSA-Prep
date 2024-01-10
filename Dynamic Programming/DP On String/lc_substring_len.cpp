@@ -25,23 +25,29 @@ int solve(string s1, string s2, int ind1, int ind2, vector<vector<int>> &dp)
         return dp[ind1][ind2];
     if (s1[ind1 - 1] != s2[ind2 - 1])
     {
-        return dp[ind1][ind2] = 0;
+        dp[ind1][ind2] = 0;
     }
     else
     {
-        return dp[ind1][ind2] = 1 + solve(s1, s2, ind1 - 1, ind2 - 1, dp);
+        dp[ind1][ind2] = 1 + solve(s1, s2, ind1 - 1, ind2 - 1, dp);
     }
+
+    solve(s1,s2,ind1-1,ind2);
+    solve(s1,s2,ind1,ind2-1);
+
+    return dp[ind1][ind2];
 }
 
 int maxlength(int n, int m, string &a, string &b){
     int maxi = INT_MIN;
     vector<vector<int>> dp(n + 1, vector<int>(m + 1, -1));
+    solve(a,b,n,m);
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i <= n; i++)
     {
-        for (int j = 0; j < m; j++)
+        for (int j = 0; j <= m; j++)
         {
-            maxi = max(maxi, solve(a, b, i + 1, j + 1, dp));
+            maxi = max(maxi, dp[i][j]);
         }
     }
     return maxi;
