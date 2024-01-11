@@ -89,7 +89,7 @@ int longestIncreasingSubsequence(vector<int> &vec, int n)
 
 int lengthOfLIS(vector<int> &nums)
 {
-    n = nums.size();
+    int n = nums.size();
     vector<int> temp;
     temp.push_back(nums[0]);
     for (int i = 1; i < n; i++)
