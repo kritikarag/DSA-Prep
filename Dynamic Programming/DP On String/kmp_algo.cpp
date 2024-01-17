@@ -1,4 +1,4 @@
-//
+// https://leetcode.com/problems/find-beautiful-indices-in-the-given-array-ii/description/
 
 #include<bits/stdc++.h>
 using namespace std;
