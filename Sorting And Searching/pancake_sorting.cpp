@@ -19,7 +19,7 @@ vector<int> pancakeSort(vector<int> &arr)
                 maxi = i;
             }
         }
-        cout << target << endl;
+        //cout << target << endl;
         if (maxi == target)
         {
             target--;
