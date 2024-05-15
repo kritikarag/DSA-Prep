@@ -39,7 +39,7 @@ public:
             while(k<n && nums[k]<=limit){
                 int curr_num = nums[k];
                 Node* node = root;
-                for(int j=10;j>=0;j--){
+                for(int j=31;j>=0;j--){
                     int bit = (curr_num>>j)&1;
 
                     if(!node->containsKey(bit)){
@@ -50,18 +50,21 @@ public:
                 k++;
             }
 
+            if(k==0)continue;
+
             int res = 0;
-
             Node* node = root;
-
-            for(int j=10;j>=0;j--){
-                int bit = (number>>j);
+            for(int j=31;j>=0;j--){
+                int bit = (number>>j)&1;
 
                 if(node->containsKey(1-bit)){
                     res = res|(1<<j);
                     node = node->getNode(1-bit);
                 }
-                else node = node->getNode(bit);
+                else if (node->containsKey(bit)){
+                    node = node->getNode(bit);
+                }
+                else break;
             }
 
             ans [index] = res;
